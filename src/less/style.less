@@ -1,0 +1,61 @@
+@bg: #EEE;
+body {
+  font: 10px sans-serif;
+  background: @bg;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.box {
+  border: 1px solid #CCC;
+  display: block;
+  margin: 15px 5px;
+  padding: 5px;
+  position: relative;
+  min-height: 50px;
+  min-width: 150px;
+  h2.box-title {
+    vertical-align: middle;
+    position: absolute;
+    left: 10px;
+    top: -24px;
+    padding: 0 6px;
+    background: @bg;
+  }
+  .box-body {
+    padding: 8px 5px;
+  }
+}
+
+.header {
+  height: 50px;
+}
+.main-wrap {
+  position: relative;
+  width: 100%;
+}
+
+@control-banner-width: 700px;
+div.control-banner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: @control-banner-width;
+}
+div.figure-banner {
+  position: absolute;
+  left: @control-banner-width;
+  top: 0;
+  right: 0;
+}

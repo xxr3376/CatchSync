@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    title Wired Project
+    link(href='/css/style.css', rel='stylesheet')
+    script(src='/js/d3.v3.min.js')
+  body
+    div.header
+      h1 Wired Project
+    div.main-wrap
+      div.control-banner
+        div.box
+          h2.box-title Generator
+          div.box-body
+            span
+              label N =
+                input(type='number', value='1000')
+            span
+              label E =
+                input(type='number', value='3000')
+            button#generate Generate
+        div.box
+          h2.box-title Injection
+          div.box-body
+            span
+              label N
+                sub src
+                | =
+                input(type='number', value='1000')
+            span
+              label N
+                sub dst
+                | =
+                input(type='number', value='1000')
+            span
+              label D =
+                input(type='number', value='20')
+            span
+              label T =
+                input(type='number', value='10')
+            button#inject Inject
+        div.box
+          h2.box-title Log
+        div.box
+          h2.box-title JSON
+      div.figure-banner
+        div.box
+          h2.box-title Figure
+          div.box-body
+            div#figure1.figure
+            div#figure2.figure
+
+    script(src='/js/graph.js')
