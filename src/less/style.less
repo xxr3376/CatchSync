@@ -2,6 +2,7 @@
 body {
   font: 10px sans-serif;
   background: @bg;
+  margin: 15px;
 }
 
 .axis path,
@@ -46,7 +47,7 @@ body {
   width: 100%;
 }
 
-@control-banner-width: 700px;
+@control-banner-width: 600px;
 div.control-banner {
   position: absolute;
   left: 0;
@@ -58,4 +59,15 @@ div.figure-banner {
   left: @control-banner-width;
   top: 0;
   right: 0;
+}
+
+#log-output {
+  background: lighten(@bg, 2%);
+  width: @control-banner-width - 40px;
+  margin: 0 auto;
+  height: 200px;
+  border: none;
+}
+textarea {
+    resize: none;
 }

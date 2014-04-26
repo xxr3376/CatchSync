@@ -1,12 +1,13 @@
 doctype html
 html
   head
-    title Wired Project
+    title Catch Sync
     link(href='/css/style.css', rel='stylesheet')
     script(src='/js/d3.v3.min.js')
+    script(src='/js/jquery-2.1.0.min.js')
   body
     div.header
-      h1 Wired Project
+      h1 Catch Sync
     div.main-wrap
       div.control-banner
         div.box
@@ -14,33 +15,39 @@ html
           div.box-body
             span
               label N =
-                input(type='number', value='1000')
+                input(type='number', value='100000', min="1")#generate-input-n
             span
               label E =
-                input(type='number', value='3000')
+                input(type='number', value='300000', min="1")#generate-input-e
             button#generate Generate
         div.box
           h2.box-title Injection
           div.box-body
-            span
+            div
               label N
                 sub src
                 | =
-                input(type='number', value='1000')
-            span
+                input(type='number', value='1000')#inject-input-src
+            div
               label N
                 sub dst
                 | =
-                input(type='number', value='1000')
-            span
+                input(type='number', value='1000')#inject-input-dest
+            div
               label D =
-                input(type='number', value='20')
-            span
+                input(type='number', value='5')#inject-input-d
+            div
               label T =
-                input(type='number', value='10')
+                input(type='number', value='10')#inject-input-t
+            div
+              label Camouflgage
+                input(type='range', value='0.5', min="0", max="1", step="0.01")#inject-input-range
+                span#inject-range-show 0.5
             button#inject Inject
         div.box
           h2.box-title Log
+          div.box-body
+            textarea(disabled="disabled")#log-output
         div.box
           h2.box-title JSON
       div.figure-banner
