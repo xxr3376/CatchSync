@@ -3,8 +3,8 @@ html
   head
     title Catch Sync
     link(href='/css/style.css', rel='stylesheet')
-    script(src='/js/d3.v3.min.js')
-    script(src='/js/jquery-2.1.0.min.js')
+    script(src='js/requirejs/require.js')
+    script(src='js/bootstrap.js')
   body
     div.header
       h1 Catch Sync
@@ -19,6 +19,19 @@ html
             span
               label E =
                 input(type='number', value='300000', min="1")#generate-input-e
+            br
+            span
+              label Method:
+
+              label
+                input(type='radio', name='generate-method', value='randomPowerlaw', checked="checked")
+                | Random Powerlaw
+              label
+                input(type='radio', name='generate-method', value='erdosRenyi')
+                | Erdos-Renyi
+              label
+                input(type='radio', name='generate-method', value='kronecker')
+                | Kronecker
             button#generate Generate
         div.box
           h2.box-title Injection
@@ -57,4 +70,5 @@ html
             div#figure1.figure
             div#figure2.figure
 
-    script(src='/js/graph.js')
+    script
+      | require(['main'])
